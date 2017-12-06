@@ -8,13 +8,13 @@
           <div class="form-group">
               <?php echo Form::label('name'); ?>
 
-              <?php echo Form::text('name', '', ['class' => 'form-control', 'placeholder' => 'Zingelbert Bembledack']); ?>
+              <?php echo Form::text('name', '', ['class' => 'form-control', 'placeholder' => 'Escriba su nombre']); ?>
 
           </div>
           <div class="form-group">
               <?php echo Form::label('email'); ?>
 
-              <?php echo Form::text('email', '', ['class' => 'form-control', 'placeholder' => 'me@mydomain.com']); ?>
+              <?php echo Form::text('email', '', ['class' => 'form-control', 'placeholder' => 'Ingrese Correo']); ?>
 
           </div>
           <div class="form-group">
