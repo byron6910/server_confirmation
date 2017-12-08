@@ -21,7 +21,7 @@
                     </div>
         @else
              <li @if(request()->is('login')) class="active" @endif ><a  href="/login">Login </a></li>
-            <li @if(request()->is('register')) class="active" @endif ><a href="/register">Crear Usuario</a></li>
+            <li @if(request()->is('register')) class="active" @endif ><a href="/user/new">Crear Usuario</a></li>
 
         @endif
 

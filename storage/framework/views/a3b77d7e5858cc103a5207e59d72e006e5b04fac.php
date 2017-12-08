@@ -21,7 +21,7 @@
                     </div>
         <?php else: ?>
              <li <?php if(request()->is('login')): ?> class="active" <?php endif; ?> ><a  href="/login">Login </a></li>
-            <li <?php if(request()->is('register')): ?> class="active" <?php endif; ?> ><a href="/register">Crear Usuario</a></li>
+            <li <?php if(request()->is('register')): ?> class="active" <?php endif; ?> ><a href="/user/new">Crear Usuario</a></li>
 
         <?php endif; ?>
 

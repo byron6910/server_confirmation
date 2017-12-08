@@ -18,8 +18,8 @@
 
 //Home related routes
 Route::get(
-    '/', ['as' => 'home', function () {
-        return response()->view('home');
+    '/', ['as' => 'login', function () {
+        return response()->view('auth.login');
     }]
 );
 

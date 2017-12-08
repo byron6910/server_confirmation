@@ -28,8 +28,9 @@ use Authenticatable, Authorizable, CanResetPassword;
      * @var array
      */
     protected $table='users';
+    //protected $fillable = ['name', 'email', 'password', 'country_code', 'phone_number','ciudad','calle','postal','foto','tipo'];
     protected $fillable = ['name', 'email', 'password', 'country_code', 'phone_number'];
-
+    
     /**
      * The attributes that should be hidden for arrays. 'name','remember_token'
      *

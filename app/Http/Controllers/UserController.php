@@ -51,7 +51,13 @@ class UserController extends Controller
                 'email' => 'required|unique:users|email',
                 'password' => 'required',
                 'country_code' => 'required',
-                'phone_number' => 'required|numeric'
+                'phone_number' => 'required|numeric',
+
+                // 'ciudad' => 'required|string|max:255',
+                // 'calle' => 'required|string|max:255',
+                // 'postal' => 'required|max:255',
+                // 'tipo'=>'required|in:administrador,cliente,soporte',
+                // 'foto'=>'mimes:jpeg,bmp,png'
             ]
         );
 

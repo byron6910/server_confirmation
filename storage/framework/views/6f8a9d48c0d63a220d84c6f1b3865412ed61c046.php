@@ -45,7 +45,7 @@
                         <!-- Authentication Links -->
                         <?php if(auth()->guard()->guest()): ?>
                             <li><a href="<?php echo e(route('login')); ?>">Login</a></li>
-                            <li><a href="<?php echo e(route('user-new')); ?>">Register</a></li>
+                            <li><a href="<?php echo e(route('user-new')); ?>">Registrar </a></li>
                         <?php else: ?>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" style="position:relative; padding-left:50px;">
