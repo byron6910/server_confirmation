@@ -26,9 +26,23 @@ class UserRequest extends FormRequest
         return [
             
             'name'=>'required',
-            'email'=>'required|unique:cooperativa,email',
+            'email'=>'required|unique:users,country_code',
             'password'=>'required',
-            'role'=>'required|in:0,1,2'
+            'country_code' => 'required',
+            'phone_number' => 'required|numeric'
+           // 'role'=>'required|in:0,1,2'
+
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Nombre Requerido',
+            'email.required'  => 'Email Requerido',
+            'password.required' => 'Correo Requerido',
+            'country_code.required'  => 'Codigo Requerido',
+            'phone_number.required' => 'Numero Requerido'
 
         ];
     }

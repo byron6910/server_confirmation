@@ -24,4 +24,15 @@ class Viaje extends Model
     public function horario(){
         return  $this->belongsTo('App\Horarios');
     }
+    
+    public function bus(){
+        
+                return $this->hasManyThrough('App\Bus','App\Cooperativa');
+            }
+
+ public function origen_destino(){
+
+        return $this->hasManyThrough('App\Origen_Destino','App\Horarios');
+    }            
+    
 }

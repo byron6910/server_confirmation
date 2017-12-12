@@ -54,13 +54,15 @@ class ConductorController extends Controller
     public function store(ConductorRequest $request)
     {
         $conductor=new Conductor();
+
+
         $conductor->id_conductor=$request->get('id_conductor');
         $conductor->nombre=$request->get('nombre');
         $conductor->apellido=$request->get('apellido');
         $conductor->telefono=$request->get('telefono');        
         $conductor->direccion=$request->get('direccion');
         $conductor->correo=$request->get('correo');
-        $conductor->direccion=$request->get('direccion');
+     
         $conductor->foto=$request->get('foto');
         
         // if($request->hasFile('foto')){
@@ -148,7 +150,7 @@ class ConductorController extends Controller
         $conductor->telefono=$request->get('telefono');        
         $conductor->direccion=$request->get('direccion');
         $conductor->correo=$request->get('correo');
-        $conductor->direccion=$request->get('direccion');
+       
         $conductor->foto=$request->get('foto');        
         $conductor->id_bus=$request->get('id_bus');
         

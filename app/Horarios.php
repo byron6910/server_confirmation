@@ -15,7 +15,7 @@ class Horarios extends Model
 
 
     public function origen_destino(){
-        return  $this->belongsTo('App\Origen_Destino');
+        return  $this->belongsTo('App\Origen_Destino','id_origen_destino');
     }
   
 }

@@ -15,6 +15,7 @@
                         <li <?php if(request()->is('conductor')): ?> class="active" <?php endif; ?>><a href="/conductor" class="list-group-item list-group-item-action">Conductor</a></li>
                         <li <?php if(request()->is('bus')): ?> class="active" <?php endif; ?>><a href="/bus" class="list-group-item list-group-item-action ">Bus</a></li>
                         <li <?php if(request()->is('horario')): ?> class="active" <?php endif; ?>><a href="/horario" class="list-group-item list-group-item-action ">Horario</a></li>
+                        <li <?php if(request()->is('user')): ?> class="active" <?php endif; ?>><a href="/user/index" class="list-group-item list-group-item-action ">Usuarios</a></li>
                         
                         
                         

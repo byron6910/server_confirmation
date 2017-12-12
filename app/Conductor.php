@@ -13,6 +13,11 @@ class Conductor extends Model
     
 
     public function bus (){
-        return $this->belongsTo('App\Bus');
+        return $this->belongsTo('App\Bus','id_bus');
     }
+
+    public function cooperativa(){
+        
+                return $this->hasManyThrough('App\Cooperativa','App\Bus','id_cooperativa','id_bus','id_cooperativa','id_bus');
+            }
 }

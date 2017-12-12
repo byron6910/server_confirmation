@@ -28,7 +28,7 @@ use Authenticatable, Authorizable, CanResetPassword;
      * @var array
      */
     protected $table='users';
-    //protected $fillable = ['name', 'email', 'password', 'country_code', 'phone_number','ciudad','calle','postal','foto','tipo'];
+   // protected $fillable = ['name', 'email', 'password', 'country_code', 'phone_number','ciudad','calle','postal','foto','tipo'];
     protected $fillable = ['name', 'email', 'password', 'country_code', 'phone_number'];
     
     /**
@@ -40,6 +40,8 @@ use Authenticatable, Authorizable, CanResetPassword;
 
     protected $dates = ['deleted_at'];
       //relaciones
+
+      
       public function reservas(){
         return  $this->hasMany('App\Reserva','id_reserva');
     }
@@ -60,4 +62,6 @@ use Authenticatable, Authorizable, CanResetPassword;
     {
         return '+' . $this->country_code . $this->phone_number;
     }
+
+
 }

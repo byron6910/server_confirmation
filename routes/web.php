@@ -31,6 +31,19 @@ Route::get(
      'uses' => 'UserController@show']
 );
 
+//index
+Route::get(
+    '/user/index',
+    [
+     
+     'middleware' => 'auth',
+     'uses' => 'UserController@index']
+);
+//Route::resource('user', 'UserController',['only'=>['index','edit','update','delete']]);
+Route::resource('user', 'UserController',['except'=>['index','create','store','show']]);
+
+
+
 Route::get(
     '/user/new', ['as' => 'user-new', function() {
         return response()->view('newUser');
@@ -42,6 +55,7 @@ Route::post(
     ['uses' => 'UserController@createNewUser', 'as' => 'user-create', ]
 );
 
+
 Route::get(
     '/user/verify', ['as' => 'user-show-verify', function() {
         return response()->view('verifyUser');
@@ -51,6 +65,13 @@ Route::get(
 Route::post(
     '/user/verify',
     ['uses' => 'UserController@verify', 'as' => 'user-verify', ]
+);
+
+//completar datos
+
+Route::post(
+    '/user/verify/post',
+    ['uses' => 'UserController@Postverify', 'as' => 'user-postverify', ]
 );
 
 Route::post(
@@ -71,10 +92,10 @@ Route::post('/profile', 'UserController@update_profile');
 //verificar correo
 Route::get('/register/verify/{code}', 'Auth/RegisterController@verify');
 
-//verificar telefono
-Route::get('/register/verify/send', 'VerificacionController@requestSms');
-Route::get('/register/verify/', 'VerificacionController@get_Confirm_phone');
-Route::post('/register/verify/', 'VerificacionController@post_Confirm_phone');
+//verificar telefono pruebas
+// Route::get('/register/verify/send', 'VerificacionController@requestSms');
+// Route::get('/register/verify/', 'VerificacionController@get_Confirm_phone');
+// Route::post('/register/verify/', 'VerificacionController@post_Confirm_phone');
 
 
 

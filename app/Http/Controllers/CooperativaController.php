@@ -21,7 +21,7 @@ class CooperativaController extends Controller
      */
 
     public function __construct(){
-      $this->middleware('admin1',['only'=>['index','store','update','destroy']]);
+      //$this->middleware('admin1',['only'=>['index','store','update','destroy']]);
      }
     public function index(Request $request)
     {

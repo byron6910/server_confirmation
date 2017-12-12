@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Image;
 use App\Http\Requests;
 use App\User;
+use App\Http\Requests\UserRequest;
 use Auth;
 use Authy\AuthyApi as AuthyApi;
 use DB;
@@ -15,6 +16,7 @@ use Illuminate\Contracts\Auth\Authenticatable;
 
 use Illuminate\Support\MessageBag;
 use Twilio\Rest\Client;
+use Illuminate\Support\Facades\Redirect;
 
 
 class UserController extends Controller
@@ -42,24 +44,86 @@ class UserController extends Controller
     return view('profile',['user'=>Auth::user()]);
     }
 
+    public function index(Request $request){
+        if($request){
+        $query=trim($request->get('searchText'));
+        $user=DB::table('users')
+        ->where('id','like','%'.$query.'%')
+      //  ->sortByDesc('id') 
+      ->orderBy('id','desc')
+      ->paginate(8);
+        return view('user.index',['users'=>$user,'searchText'=>$query]);
+        }
+    }
 
-    public function createNewUser(Request $request, AuthyApi $authyApi)
+
+    public function edit($id)
     {
-        $this->validate(
-            $request, [
-                'name' => 'required|string',
-                'email' => 'required|unique:users|email',
-                'password' => 'required',
-                'country_code' => 'required',
-                'phone_number' => 'required|numeric',
+        
+        $user=User::findOrFail($id);
+        
+        return view('user.edit',['user'=>$user]);
+    }
 
-                // 'ciudad' => 'required|string|max:255',
-                // 'calle' => 'required|string|max:255',
-                // 'postal' => 'required|max:255',
-                // 'tipo'=>'required|in:administrador,cliente,soporte',
-                // 'foto'=>'mimes:jpeg,bmp,png'
-            ]
-        );
+
+    public function update(UserRequest $request, $id)
+    {
+        $user=User::findOrFail($id);
+
+        $user->name=$request->get('name');
+        $user->email=$request->get('email');
+        $user->password=$request->get('password');        
+        $user->phone_number=$request->get('phone_number');
+        $user->country_code=$request->get('country_code');
+       
+    
+        
+   
+        $user->update();
+        
+        return Redirect::to('user/index');
+        
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $user=User::findOrFail($id);
+        $user->delete();
+        //  $bus->condicion='0';
+        //  $bus->update();
+        return Redirect::to('user/index');
+
+
+    }
+
+
+
+
+
+
+    public function createNewUser(UserRequest $request, AuthyApi $authyApi)
+    {
+        // $this->validate(
+        //     $request, [
+        //         'name' => 'required|string',
+        //         'email' => 'required|unique:users',
+        //         'password' => 'required',
+        //         'country_code' => 'required',
+        //         'phone_number' => 'required|numeric',
+
+        //         // 'ciudad' => 'required|string|max:255',
+        //         // 'calle' => 'required|string|max:255',
+        //         // 'postal' => 'required|max:255',
+        //         // 'tipo'=>'required|in:administrador,cliente,soporte',
+        //         // 'foto'=>'mimes:jpeg,bmp,png'
+        //     ]
+        // );
 
         $values = $request->all();
         $values['password'] = Hash::make($values['password']);
@@ -128,6 +192,22 @@ class UserController extends Controller
             $errors = $this->getAuthyErrors($verification->errors());
             return view('verifyUser', ['errors' => new MessageBag($errors)]);
         }
+    }
+
+    public function Postverify(Request $request){
+
+        $auth=Auth::user();
+        $user=User::findOrFail($auth->id);
+        $user->ciudad=$request->get('ciudad');
+        $user->calle=$request->get('calle');        
+        $user->postal=$request->get('postal');
+        $user->foto=$request->get('foto');
+        $user->role=$request->get('role');
+
+        $user->save();
+        
+        return view('home');
+
     }
 
     /**

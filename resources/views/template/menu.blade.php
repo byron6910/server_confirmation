@@ -15,6 +15,7 @@
                         <li @if(request()->is('conductor')) class="active" @endif><a href="/conductor" class="list-group-item list-group-item-action">Conductor</a></li>
                         <li @if(request()->is('bus')) class="active" @endif><a href="/bus" class="list-group-item list-group-item-action ">Bus</a></li>
                         <li @if(request()->is('horario')) class="active" @endif><a href="/horario" class="list-group-item list-group-item-action ">Horario</a></li>
+                        <li @if(request()->is('user')) class="active" @endif><a href="/user/index" class="list-group-item list-group-item-action ">Usuarios</a></li>
                         
                         
                         

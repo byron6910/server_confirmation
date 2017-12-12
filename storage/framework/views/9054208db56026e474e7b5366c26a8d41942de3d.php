@@ -3,6 +3,8 @@
       <h1>Crear Cuenta de Usuario</h1>
       <p> Ingresa los datos </p>
 
+      <?php echo $__env->make('Mensajes.error', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
       <?php echo Form::open(['url' => route('user-create'),'file'=>'true']); ?>
 
           <div class="form-group">
@@ -36,43 +38,6 @@
           <?php echo Form::text('phone_number', '', ['class' => 'form-control', 'id' => 'authy-cellphone']); ?>
 
       </div>
-
-          <!-- <div class="form-group">
-              <?php echo Form::label('ciudad'); ?>
-
-              <?php echo Form::text('ciudad', '', ['class' => 'form-control', 'placeholder' => 'Ingrese Ciudad']); ?>
-
-          </div>
-
-          <div class="form-group">
-              <?php echo Form::label('calle'); ?>
-
-              <?php echo Form::text('calle', '', ['class' => 'form-control', 'placeholder' => 'Ingrese Calle']); ?>
-
-          </div>
-
-          <div class="form-group">
-              <?php echo Form::label('postal'); ?>
-
-              <?php echo Form::number('postal', '', ['class' => 'form-control', 'placeholder' => 'Ingrese postal']); ?>
-
-          </div>
-
-         
-
-          <div class="form-group">
-            
-              <?php echo Form::select('tipo', ['cliente' => 'Cliente', 'administrador' => 'Administrador', 'supervisor' => 'Supervisor'],'cliente'); ?>
-
-          </div> -->
-<!-- 
-          <div class="form-group">
-              <?php echo Form::label('foto'); ?>
-
-              <?php echo Form::file('foto'); ?>
-
-          </div> -->
-          
 
 
 

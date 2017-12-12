@@ -16,6 +16,6 @@ class Bus extends Model
         return  $this->hasMany('App\Conductor','id_conductor');
     }
     public function cooperativa(){
-        return $this->belongsTo('App\Cooperativa');
+        return $this->belongsTo('App\Cooperativa','id_cooperativa');
     }
 }

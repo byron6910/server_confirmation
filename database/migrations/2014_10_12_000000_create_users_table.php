@@ -23,12 +23,12 @@ class CreateUsersTable extends Migration
             $table->string('authy_id')->nullable();
             $table->boolean('verified')->default(false);
             
-            // $table->string('ciudad');
-            // $table->string('calle');
-            // $table->integer('postal')->length(10)->unsigned();
+            // $table->string('ciudad')->nullable();;
+            // $table->string('calle')->nullable();;
+            // $table->integer('postal')->length(10)->unsigned()->nullable();;
             
             // $table->string('foto')->default('default.jpg'); 
-            // $table->enum('tipo',['cliente','funcionario','administrador'])->default('funcionario');
+            // $table->enum('role',['cliente','funcionario','administrador'])->default('funcionario');
 
             $table->rememberToken();
             $table->timestamps();
