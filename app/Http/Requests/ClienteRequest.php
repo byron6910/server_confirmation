@@ -42,9 +42,7 @@ class ClienteRequest extends FormRequest
             'foto'=>'mimes:jpeg,bmp,png',//formato archivos
             'usuario'=>'required',
             'correo'=>'required|unique:clientes,ci',
-            
-            //'correo'=>'required|unique:clientes,correo,'.$this->id.',ci',
-          // 'correo'=>Rule::unique('clientes')->ignore($this->id,'ci'), 
+     
            'password'=>'required'
 
 

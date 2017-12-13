@@ -3,7 +3,7 @@
 <div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog" tabindex="-1"
  id="modal-delete-{{$cooperativa->id_cooperativa}}">
 
-    {{Form::Open(['action'=>['CooperativaController@destroy',$cooperativa->id_cooperativa],'method'=>'delete'])}}
+    {{Form::Open(['action'=>['Cooperativa_Controller@destroy',$cooperativa->id_cooperativa],'method'=>'delete'])}}
 
         <div class="modal-dialog">
             <div class="modal-content">

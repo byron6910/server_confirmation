@@ -17,5 +17,10 @@ class Horarios extends Model
     public function origen_destino(){
         return  $this->belongsTo('App\Origen_Destino','id_origen_destino');
     }
+
+    public function reserva(){
+        
+                return $this->hasManyThrough('App\Reserva','App\Viaje','id_horario','id_viaje','id_horario','id_viaje');
+            }
   
 }

@@ -26,13 +26,19 @@ class HorariosController extends Controller
      {
          if($request){
          $query=trim($request->get('searchText'));//trim, quita espacios entre inicio y final
-         $horarios=DB::table('horarios as h')
-         ->join('origen_destino as od','h.id_origen_destino','=','od.id_origen_destino')
-         ->select('h.id_horario','h.fecha_horario','h.hora','od.origen as origen','od.destino as destino','od.precio as precio','od.cantidad as cantidad')
-         ->where('h.hora','like','%'.$query.'%')
+        //  $horarios=DB::table('horarios as h')
+        // // ->join('origen_destino as od','h.id_origen_destino','=','od.id_origen_destino')
+        // // ->select('h.id_horario','h.fecha_horario','h.hora','od.origen as origen','od.destino as destino','od.precio as precio','od.cantidad as cantidad')
+        //  ->where('h.hora','like','%'.$query.'%')
                  
-         ->orderBy('id_horario','desc')
-         ->paginate(8);
+        //  ->orderBy('id_horario','desc')
+        //  ->paginate(8);
+        if($query){
+            $horarios=Horarios::where('fecha_horario',$query)->paginate(5);
+            return view('horario.index',['horarios'=>$horarios,'searchText'=>$query]);
+        }else
+        $horarios=Horarios::paginate(5);
+  
          return view('horario.index',['horarios'=>$horarios,'searchText'=>$query]);
          
          }

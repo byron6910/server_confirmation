@@ -105,6 +105,10 @@
                 
             </div>
 
+            <div> 
+                <h3> {{$reserva->cooperativa}}</h3>
+            </div>
+
             {!!Form::close()!!}
         </div>
     </div>

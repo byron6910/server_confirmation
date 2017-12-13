@@ -61,7 +61,12 @@
                 
             </div>
 
+               {{$user->reservas}}
+
             {!!Form::close()!!}
+
+            
+          
         </div>
     </div>
 @endsection

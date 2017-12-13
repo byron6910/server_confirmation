@@ -25,17 +25,21 @@ class ReservaController extends Controller
     {
         if($request){
         $query=trim($request->get('searchText'));//trim, quita espacios entre inicio y final
-        $reservas=DB::table('reserva as r')
-        ->join('clientes as c','c.ci','=','r.ci')
-        ->join('viaje as v','v.id_viaje','=','r.id_viaje')
-        ->join('users as u','u.id','=','r.id')
+        // $reservas=DB::table('reserva as r')
+        // ->join('clientes as c','c.ci','=','r.ci')
+        // ->join('viaje as v','v.id_viaje','=','r.id_viaje')
+        // ->join('users as u','u.id','=','r.id')
         
-        ->select('r.id_reserva','r.fecha_reserva','r.estado','r.cantidad','r.asiento',DB::raw('CONCAT(c.nombre," ",c.apellido) as Nombre') ,'c.telefono as telefono','v.id_viaje as id_viaje','u.name as id')
-        ->where('r.estado','like','%'.$query.'%')
+        // ->select('r.id_reserva','r.fecha_reserva','r.estado','r.cantidad','r.asiento',DB::raw('CONCAT(c.nombre," ",c.apellido) as Nombre') ,'c.telefono as telefono','v.id_viaje as id_viaje','u.name as id')
+        // ->where('r.estado','like','%'.$query.'%')
          
-        ->orderBy('id_reserva','desc')
-        ->paginate(8);
-        return view('reserva.index',['reservas'=>$reservas,'searchText'=>$query]);
+        // ->orderBy('id_reserva','desc')
+        // ->paginate(8);
+        $reservas=Reserva::paginate(10);
+    
+
+
+        return view('reserva.index1',['reservas'=>$reservas,'searchText'=>$query]);
         
         }
     }

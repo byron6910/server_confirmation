@@ -31,7 +31,7 @@
                         <td> {{$cooperativa->estado}}</td> 
                         
                         <td>
-                        <a href="{{URL::action('CooperativaController@edit',$cooperativa->id_cooperativa)}}"><button class="btn btn-info">Editar </button></a>
+                        <a href="{{URL::action('Cooperativa_Controller@edit',$cooperativa->id_cooperativa)}}"><button class="btn btn-info">Editar </button></a>
                         <a href="" data-target="#modal-delete-{{$cooperativa->id_cooperativa}}" data-toggle="modal"><button class="btn btn-danger">Eliminar </button></a>
                         </td>
                     </tr>
@@ -39,7 +39,7 @@
                     @endforeach
                 </table>
             </div>
-            {{$cooperativas->render()}}
+            {{$cooperativas->links()}}
         </div>
 
     </div>

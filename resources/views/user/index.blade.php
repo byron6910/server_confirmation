@@ -43,6 +43,8 @@
                     @include('user.modal')
                     @endforeach
                 </table>
+
+
             </div>
             {{$users->render()}}
         </div>

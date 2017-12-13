@@ -61,8 +61,14 @@
                 
             </div>
 
+               <?php echo e($user->reservas); ?>
+
+
             <?php echo Form::close(); ?>
 
+
+            
+          
         </div>
     </div>
 <?php $__env->stopSection(); ?>

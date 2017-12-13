@@ -18,4 +18,15 @@ class Cooperativa extends Model
     public function viajes(){
         return $this->hasMany('App\Viajes','id_viaje');
     }
+
+    
+    public function reserva(){
+        
+                return $this->hasManyThrough('App\Reserva','App\Viaje','id_cooperativa','id_viaje','id_cooperativa','id_viaje');
+            }
+        
+    public function conductor(){
+                
+        return $this->hasManyThrough('App\Conductor','App\Bus','id_cooperativa','id_bus','id_cooperativa','id_bus');
+        }
 }

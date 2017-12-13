@@ -7,7 +7,7 @@
 
               
                      <div class="list-group">
-                        <li <?php if(request()->is('cooperativa')): ?> class="active" <?php endif; ?>><a href="<?php echo e(url('/cooperativa')); ?>" class="list-group-item  list-group-item-action ">Cooperativa</a></li>
+                        <li <?php if(request()->is('cooperativa')): ?> class="active" <?php endif; ?>><a href="/cooperativa" class="list-group-item  list-group-item-action ">Cooperativa</a></li>
                         <li <?php if(request()->is('cliente')): ?> class="active" <?php endif; ?>><a href="/cliente" class="list-group-item list-group-item-action">Cliente</a></li>
                         <li <?php if(request()->is('origen_destino')): ?> class="active" <?php endif; ?>><a href="/origen_destino" class="list-group-item list-group-item-action">Origen Destino</a></li>
                         <li <?php if(request()->is('viaje')): ?> class="active" <?php endif; ?>><a href="/viaje" class="list-group-item list-group-item-action ">Viaje</a></li>
@@ -16,6 +16,7 @@
                         <li <?php if(request()->is('bus')): ?> class="active" <?php endif; ?>><a href="/bus" class="list-group-item list-group-item-action ">Bus</a></li>
                         <li <?php if(request()->is('horario')): ?> class="active" <?php endif; ?>><a href="/horario" class="list-group-item list-group-item-action ">Horario</a></li>
                         <li <?php if(request()->is('user')): ?> class="active" <?php endif; ?>><a href="/user/index" class="list-group-item list-group-item-action ">Usuarios</a></li>
+                        <li ><a href="/cooperativa" class="list-group-item  list-group-item-action ">Cooperativa2</a></li>
                         
                         
                         

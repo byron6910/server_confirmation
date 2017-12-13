@@ -3,7 +3,7 @@
 <div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog" tabindex="-1"
  id="modal-delete-{{$origen->id_origen_destino}}">
 
-    {{Form::Open(['action'=>['OrigenDestinoController@destroy',$origen->id_origen_destino],'method'=>'delete'])}}
+    {{Form::Open(['action'=>['OrigenDestino_Controller@destroy',$origen->id_origen_destino],'method'=>'delete'])}}
 
         <div class="modal-dialog">
             <div class="modal-content">

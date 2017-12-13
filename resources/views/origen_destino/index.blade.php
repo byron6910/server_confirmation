@@ -30,7 +30,7 @@
                         
                         
                         <td>
-                        <a href="{{URL::action('OrigenDestinoController@edit',$origen->id_origen_destino)}}"><button class="btn btn-info">Editar </button></a>
+                        <a href="{{URL::action('OrigenDestino_Controller@edit',$origen->id_origen_destino)}}"><button class="btn btn-info">Editar </button></a>
                         <a href="" data-target="#modal-delete-{{$origen->id_origen_destino}}" data-toggle="modal"><button class="btn btn-danger">Eliminar </button></a>
                         </td>
                     </tr>
@@ -38,7 +38,7 @@
                     @endforeach
                 </table>
             </div>
-            {{$origenes->render()}}
+            {{$origenes->links()}}
         </div>
 
     </div>

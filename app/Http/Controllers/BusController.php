@@ -32,6 +32,7 @@ class BusController extends Controller
         
         ->orderBy('id_bus','desc')
         ->paginate(8);
+        
         return view('bus.index',['buses'=>$buses,'searchText'=>$query]);
         
         }

@@ -35,7 +35,6 @@ Route::get(
 Route::get(
     '/user/index',
     [
-     
      'middleware' => 'auth',
      'uses' => 'UserController@index']
 );
@@ -110,9 +109,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
     Route::resource('bus', 'BusController');
     Route::resource('conductor', 'ConductorController');
-    Route::resource('cooperativa', 'CooperativaController');
-    Route::resource('origen_destino', 'OrigenDestinoController');
-    Route::resource('cliente', 'ClienteController');
+    Route::resource('cooperativa', 'Cooperativa_Controller');
+    Route::resource('origen_destino', 'OrigenDestino_Controller');
+    Route::resource('cliente', 'Cliente_Controller');
     Route::resource('viaje', 'ViajeController');
     Route::resource('reserva', 'ReservaController');    
     Route::resource('horario','HorariosController');

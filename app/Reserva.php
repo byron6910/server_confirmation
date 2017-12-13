@@ -22,18 +22,14 @@ class Reserva extends Model
     }
 
     public function viaje(){
-        return  $this->belongs('App\Viaje','id_viaje');
+        return  $this->belongsTo('App\Viaje','id_viaje');
     }
 
-    public function cooperativa(){
-
-        return $this->hasManyThrough('App\Cooperativa','App\Viaje','id_cooperativa','id_viaje','id_cooperativa','id_viaje');
+    public function pago(){
+        return  $this->belongsTo('App\Pago','id_pago');
     }
 
-    public function horario(){
-        
-                return $this->hasManyThrough('App\Horario','App\Viaje','id_horario','id_viaje','id_horario','id_viaje');
-            }
+
 
 
 }

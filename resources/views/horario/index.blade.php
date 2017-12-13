@@ -27,10 +27,10 @@
                         <td> {{$horario->id_horario}}</td>
                         <td> {{$horario->fecha_horario}}</td>
                         <td> {{$horario->hora}}</td>
-                        <td> {{$horario->origen}}</td>
-                        <td> {{$horario->destino}}</td>
-                        <td> {{$horario->precio}}</td>
-                        <td> {{$horario->cantidad}}</td>
+                        <td> {{$horario->origen_destino->origen}}</td>
+                        <td> {{$horario->origen_destino->destino}}</td>
+                        <td> {{$horario->origen_destino->precio}}</td>
+                        <td> {{$horario->origen_destino->cantidad}}</td>
                         
                         <td>
                         <a href="{{URL::action('HorariosController@edit',$horario->id_horario)}}"><button class="btn btn-info">Editar </button></a>
@@ -41,7 +41,7 @@
                     @endforeach
                 </table>
             </div>
-            {{$horarios->render()}}
+            {{ $horarios->links() }}
         </div>
 
     </div>

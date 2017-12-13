@@ -26,10 +26,10 @@
                         <td> <?php echo e($horario->id_horario); ?></td>
                         <td> <?php echo e($horario->fecha_horario); ?></td>
                         <td> <?php echo e($horario->hora); ?></td>
-                        <td> <?php echo e($horario->origen); ?></td>
-                        <td> <?php echo e($horario->destino); ?></td>
-                        <td> <?php echo e($horario->precio); ?></td>
-                        <td> <?php echo e($horario->cantidad); ?></td>
+                        <td> <?php echo e($horario->origen_destino->origen); ?></td>
+                        <td> <?php echo e($horario->origen_destino->destino); ?></td>
+                        <td> <?php echo e($horario->origen_destino->precio); ?></td>
+                        <td> <?php echo e($horario->origen_destino->cantidad); ?></td>
                         
                         <td>
                         <a href="<?php echo e(URL::action('HorariosController@edit',$horario->id_horario)); ?>"><button class="btn btn-info">Editar </button></a>
@@ -40,7 +40,7 @@
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </table>
             </div>
-            <?php echo e($horarios->render()); ?>
+            <?php echo e($horarios->links()); ?>
 
         </div>
 

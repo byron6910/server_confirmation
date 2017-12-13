@@ -17,17 +17,19 @@ class OrigenDestinoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function __construct(){
-        $this->middleware('auth',['only'=>['index','store','update','destroy']]);
+        $this->middleware('admin1',['only'=>['index','store','update','destroy']]);
      }
 
     public function index(Request $request)
     {
         if($request){
             $query=trim($request->get('searchText'));//trim, quita espacios entre inicio y final
-            $origenes=DB::table('origen_destino')->where('origen','like','%'.$query.'%')
-            //->where ('condicion','=','1')        
-            ->orderBy('id_origen_destino','desc')
-            ->paginate(8);
+            // $origenes=DB::table('origen_destino')->where('origen','like','%'.$query.'%')
+            // //->where ('condicion','=','1')        
+            // ->orderBy('id_origen_destino','desc')
+            // ->paginate(8);
+            $origenes=Origen_Destino::paginate(5);
+
             return view('origen_destino.index',['origenes'=>$origenes,'searchText'=>$query]);
             
             }

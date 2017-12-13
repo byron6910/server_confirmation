@@ -47,6 +47,11 @@
                 
             </div>
 
+            <div class="form-group">
+                <h3>{{$horario->reserva}}</h3>
+                
+            </div>
+
             {!!Form::close()!!}
         </div>
     </div>

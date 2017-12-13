@@ -3,7 +3,7 @@
 <div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog" tabindex="-1"
  id="modal-delete-{{$cliente->ci}}">
 
-    {{Form::Open(['action'=>['ClienteController@destroy',$cliente->ci],'method'=>'delete'])}}
+    {{Form::Open(['action'=>['Cliente_Controller@destroy',$cliente->ci],'method'=>'delete'])}}
 
         <div class="modal-dialog">
             <div class="modal-content">
