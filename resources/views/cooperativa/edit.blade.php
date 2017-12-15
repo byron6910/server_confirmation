@@ -53,6 +53,9 @@
                 
             </div>
 
+            <h3>{{$cooperativa->reserva}}</h3>
+            <h3>{{$cooperativa->conductor}}</h3>
+
             {!!Form::close()!!}
         </div>
     </div>

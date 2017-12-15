@@ -53,6 +53,9 @@
                 
             </div>
 
+            <h3><?php echo e($cooperativa->reserva); ?></h3>
+            <h3><?php echo e($cooperativa->conductor); ?></h3>
+
             <?php echo Form::close(); ?>
 
         </div>

@@ -24,7 +24,8 @@ class BusController extends Controller
     {
         if($request){
         $query=trim($request->get('searchText'));//trim, quita espacios entre inicio y final
-        $buses=DB::table('bus as b')->where('nombre','like','%'.$query.'%')
+        $buses=DB::table('bus as b')->where('marca','like','%'.$query.'%')
+        ->orwhere('id_bus','like','%'.$query.'%')
         //->where ('condicion','=','1')  
         ->join('cooperativa as c','b.id_cooperativa','c.id_cooperativa')
         ->select('b.id_bus','b.marca','b.capacidad','b.condicion','c.nombre as cooperativa')      

@@ -24,9 +24,17 @@ class Cooperativa_Controller extends Controller
               // //->where ('condicion','=','1')        
               // ->orderBy('id_cooperativa','desc')
               // ->paginate(8);
-              $cooperativas=Cooperativa::paginate(5);
+              if($query){
+                $cooperativas=Cooperativa::where('id_cooperativa',$query)->orwhere('nombre',$query)->paginate(5);
+                return view('cooperativa.index',['cooperativas'=>$cooperativas,'searchText'=>$query]);
+                 } 
+            else{
+                $cooperativas=Cooperativa::paginate(5);
+                
+                return view('cooperativa.index',['cooperativas'=>$cooperativas,'searchText'=>$query]);
+             
+             }
               
-              return view('cooperativa.index',['cooperativas'=>$cooperativas,'searchText'=>$query]);
               
               }
           }
@@ -90,7 +98,7 @@ class Cooperativa_Controller extends Controller
            */
           public function edit($id)
           {
-              return view('cooperativa.edit',["cooperativa"=>cooperativa::findOrFail($id)]);
+              return view('cooperativa.edit',["cooperativa"=>Cooperativa::findOrFail($id)]);
           }
       
           /**

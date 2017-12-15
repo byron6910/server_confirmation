@@ -29,7 +29,7 @@ class ViajeController extends Controller
         
         ->select('v.id_viaje','v.estado','coo.nombre as nombre','h.fecha_horario as fecha','h.hora as hora')
         ->where('v.estado','like','%'.$query.'%')
-                
+        ->orwhere('v.id_viaje','like','%'.$query.'%')        
         ->orderBy('id_viaje','desc')
         ->paginate(8);
         return view('viaje.index',['viajes'=>$viajes,'searchText'=>$query]);

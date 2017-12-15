@@ -1,4 +1,4 @@
-<?php echo Form::open(['url'=>'clientes','method'=>'GET','autocomplete'=>'off','role'=>'search']); ?>
+<?php echo Form::open(['url'=>'cliente','method'=>'GET','autocomplete'=>'off','role'=>'search']); ?>
 
 
 <div class="form-group">

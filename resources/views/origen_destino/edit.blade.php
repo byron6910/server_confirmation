@@ -39,12 +39,18 @@
 
             </div>
            
-            
+            <h3>{{$origen->reserva}}</h3>
+
             <div class="form-group">
                 <button class="btn btn-primary" type="submit">Enviar</button>
                 <button class="btn btn-danger" type="reset">Cancelar</button>
                 
             </div>
+
+            
+                
+                
+          
 
             {!!Form::close()!!}
         </div>

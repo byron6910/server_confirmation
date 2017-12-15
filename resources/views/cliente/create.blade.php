@@ -6,68 +6,68 @@
             <h3> Nuevo Cliente </h3>
            
             @include('Mensajes.error')
-            {{!!Form::open(['url'=>'cliente','method'=>'POST','autocomplete'=>'off','file'->'true'])!!}}
+            {{!!Form::open(['url'=>'cliente','method'=>'POST','autocomplete'=>'off','file'=>'true'])!!}}
             {{Form::token()}}
 
             <div class="form-group">
                 <label for="ci">CI:</label>
-                <input type="text" class="form-control" placeholder="Escriba CI" name="ci">
+                <input type="text" class="form-control" value="{{old('ci')}}" placeholder="Escriba CI" name="ci">
 
             </div>
             
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
-                <input type="text" class="form-control" placeholder="Escriba Nombre" name="nombre">
+                <input type="text" class="form-control"value="{{old('nombre')}}"  placeholder="Escriba Nombre" name="nombre">
 
             </div>
 
             <div class="form-group">
                 <label for="apellido">Apellido:</label>
-                <input type="text" class="form-control" placeholder="Escriba Apellido" name="apellido">
+                <input type="text" class="form-control" value="{{old('apellido')}}" placeholder="Escriba Apellido" name="apellido">
 
             </div>
 
             <div class="form-group">
                 <label for="telefono">Telefono:</label>
-                <input type="number" class="form-control" placeholder="Escriba Telefono" name="telefono">
+                <input type="number" class="form-control" value="{{old('telefono')}}" placeholder="Escriba Telefono" name="telefono">
 
             </div>
 
             <div class="form-group">
                 <label for="ciudad">Ciudad:</label>
-                <input type="text" class="form-control" placeholder="Escriba Ciudad" name="ciudad">
+                <input type="text" class="form-control" value="{{old('ciudad')}}" placeholder="Escriba Ciudad" name="ciudad">
 
             </div>
            
 
             <div class="form-group">
                 <label for="calle">Calle:</label>
-                <input type="text" class="form-control" placeholder="Escriba Calle" name="calle">
+                <input type="text" class="form-control" value="{{old('calle')}}" placeholder="Escriba Calle" name="calle">
                 
             </div>
 
             <div class="form-group">
                 <label for="postal">Postal:</label>
-                <input type="number" class="form-control" placeholder="Escriba Postal" name="postal">
+                <input type="number" class="form-control" value="{{old('postal')}}" placeholder="Escriba Postal" name="postal">
 
             </div>
 
 
             <div class="form-group">
                 <label for="correo">Correo:</label>
-                <input type="email" class="form-control" placeholder="Escriba Correo" name="correo">
+                <input type="email" class="form-control" value="{{old('correo')}}" placeholder="Escriba Correo" name="correo">
                 
             </div>
 
             <div class="form-group">
                 <label for="usuario">Usuario:</label>
-                <input type="text" class="form-control" placeholder="Escriba Usuario" name="usuario">
+                <input type="text" class="form-control" value="{{old('usuario')}}" placeholder="Escriba Usuario" name="usuario">
                 
             </div>
 
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" class="form-control" placeholder="Escriba Password" name="password">
+                <input type="password" class="form-control"  value="{{old('password')}}" placeholder="Escriba Password" name="password">
                 
             </div>
             

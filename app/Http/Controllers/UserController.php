@@ -53,9 +53,19 @@ class UserController extends Controller
     //   ->orderBy('id','desc')
     //   ->paginate(8);
 
-      $users=User::paginate(5);
-
+     
+      if($query){
+        $users=User::where('id',$query)->orwhere('name',$query)->paginate(5);
         return view('user.index',['users'=>$users,'searchText'=>$query]);
+         } 
+    else{
+        $users=User::paginate(5);
+    
+        return view('user.index',['users'=>$users,'searchText'=>$query]);
+     
+     }
+      
+        
         }
     }
 

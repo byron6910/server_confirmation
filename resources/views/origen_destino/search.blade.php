@@ -1,4 +1,4 @@
-{!! Form::open(['url'=>'clientes','method'=>'GET','autocomplete'=>'off','role'=>'search'])!!}
+{!! Form::open(['url'=>'origen_destino','method'=>'GET','autocomplete'=>'off','role'=>'search'])!!}
 
 <div class="form-group">
     <div class="input-group">

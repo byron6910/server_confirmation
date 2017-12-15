@@ -38,8 +38,9 @@ class ClienteRequest extends FormRequest
             'ciudad'=>'required',
             'calle'=>'required',
             'postal'=>'required',
-           // 'foto'=>'required',
-            'foto'=>'mimes:jpeg,bmp,png',//formato archivos
+           
+            //'foto'=>'mimes:jpeg,bmp,png',//formato archivos
+            'foto'=>'mimes:jpeg,png,bmp',
             'usuario'=>'required',
             'correo'=>'required|unique:clientes,ci',
      

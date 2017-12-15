@@ -26,7 +26,7 @@ class ConductorController extends Controller
         ->join('bus as b','c.id_bus','=','b.id_bus')
         ->select('c.id_conductor','c.nombre','c.apellido','c.telefono','c.correo','c.direccion','c.foto','b.id_bus as placa')
         ->where('c.nombre','like','%'.$query.'%')
-                
+        ->orwhere('c.id_conductor','like','%'.$query.'%')
         ->orderBy('id_conductor','desc')
         ->paginate(8);
         return view('conductor.index',['conductores'=>$conductores,'searchText'=>$query]);
@@ -63,7 +63,7 @@ class ConductorController extends Controller
         $conductor->direccion=$request->get('direccion');
         $conductor->correo=$request->get('correo');
      
-        $conductor->foto=$request->get('foto');
+       $conductor->foto=$request->get('foto');
         
         // if($request->hasFile('foto')){
         // $extension=$request->file('foto')->getClientOriginalExtension();
@@ -80,12 +80,14 @@ class ConductorController extends Controller
         
         if($request->hasFile('foto')){
             
-            $foto=$request->file('foto');
+            //$foto=Input::file('foto');
+             $foto=$request->file('foto');
             $extension=time().'.'.$foto->getClientOriginalExtension();
-            Image::make($foto)->resize(200,200)->save(public_path('imagenes/conductores/fotos/'.$extension));
+            $location=public_path('imagenes/conductores/fotos/'.$extension);
+            Image::make($foto)->resize(200,200)->save($location);
          
             $conductor->foto=$extension;
-            $conductor->save();
+           
         }
         
       /*  if(Input::hasFile('foto')){

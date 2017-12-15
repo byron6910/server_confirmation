@@ -44,7 +44,7 @@
                         
                         
                         <td>
-                        <a href="<?php echo e(URL::action('ClienteController@edit',$cliente->ci)); ?>"><button class="btn btn-info">Editar </button></a>
+                        <a href="<?php echo e(URL::action('Cliente_Controller@edit',$cliente->ci)); ?>"><button class="btn btn-info">Editar </button></a>
                         <a href="" data-target="#modal-delete-<?php echo e($cliente->ci); ?>" data-toggle="modal"><button class="btn btn-danger">Eliminar </button></a>
                         </td>
                     </tr>

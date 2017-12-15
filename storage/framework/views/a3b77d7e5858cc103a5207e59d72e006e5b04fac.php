@@ -16,7 +16,7 @@
                         <li <?php if(request()->is('bus')): ?> class="active" <?php endif; ?>><a href="/bus" class="list-group-item list-group-item-action ">Bus</a></li>
                         <li <?php if(request()->is('horario')): ?> class="active" <?php endif; ?>><a href="/horario" class="list-group-item list-group-item-action ">Horario</a></li>
                         <li <?php if(request()->is('user')): ?> class="active" <?php endif; ?>><a href="/user/index" class="list-group-item list-group-item-action ">Usuarios</a></li>
-                        <li ><a href="/cooperativa" class="list-group-item  list-group-item-action ">Cooperativa2</a></li>
+                        
                         
                         
                         

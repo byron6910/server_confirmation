@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Collection;
 use Carbon\Carbon;
 
-class ReservaController extends Controller
+class ReservaController1 extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -91,11 +91,11 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li ><a href="cliente"><i class="fa fa-user-circle"></i> Clientes</a></li>
+                <li ><a href="{{url('/cliente')}}"><i class="fa fa-user-circle"></i> Clientes</a></li>
         
-                <li><a href="origen_destino"><i class="fa fa-circle-o"></i> Origen Destino</a></li>
-                <li ><a href="horario"><i class="fa fa-circle-o"></i> Horario</a></li>
-                <li><a href="viaje"><i class="fa fa-circle-o"></i> Viaje</a></li>
+                <li><a href="{{url('origen_destino')}}"><i class="fa fa-circle-o"></i> Origen Destino</a></li>
+                <li ><a href="{{url('horario')}}"><i class="fa fa-circle-o"></i> Horario</a></li>
+                <li><a href="{{url('viaje')}}"><i class="fa fa-circle-o"></i> Viaje</a></li>
          
                 
               </ul>
@@ -108,9 +108,9 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-               <li><a href="cooperativa"><i class="fa fa-circle-o"></i> Cooperativa</a></li>
-                <li><a href="bus"><i class="fa fa-bus"></i> Bus</a></li>  
-                <li><a href="conductor"><i class="fa fa-vcard-o"></i> Conductor</a></li>
+               <li><a href="{{url('/cooperativa')}}"><i class="fa fa-circle-o"></i> Cooperativa</a></li>
+                <li><a href="{{url('/bus')}}"><i class="fa fa-bus"></i> Bus</a></li>  
+                <li><a href="{{url('/conductor')}}"><i class="fa fa-vcard-o"></i> Conductor</a></li>
 
               </ul>
             </li>
@@ -121,8 +121,8 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-              <li><a href="reserva"><i class="fa fa-circle-o"></i> Reserva</a></li>
-              <li><a href="pago"><i class="fa fa-cc-paypal"></i>Pago</a></li>
+              <li><a href="{{url('/reserva')}}"><i class="fa fa-circle-o"></i> Reserva</a></li>
+              <li><a href="{{url('pago')}}"><i class="fa fa-cc-paypal"></i>Pago</a></li>
               </ul>
             </li>
                        
@@ -132,7 +132,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/user/index"><i class="fa fa-circle-o"></i> Usuarios</a></li>
+                <li><a href="{{url('/user/index')}}"><i class="fa fa-circle-o"></i> Usuarios</a></li>
                 
               </ul>
             </li>

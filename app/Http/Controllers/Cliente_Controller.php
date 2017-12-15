@@ -25,8 +25,8 @@ class Cliente_Controller extends Controller
          if($request){
              $query=trim($request->get('searchText'));//trim, quita espacios entre inicio y final
              $clientes=DB::table('clientes')
-             ->where('nombre','like','%'.$query.'%')
-             ->orwhere('ci','like','%'.$query.'%')
+             ->where('ci','like','%'.$query.'%')
+             ->orwhere('nombre','like','%'.$query.'%')
              //->where ('condicion','=','1')        
              ->orderBy('ci','desc')
              ->paginate(8);

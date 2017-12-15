@@ -35,11 +35,19 @@ class ReservaController extends Controller
          
         // ->orderBy('id_reserva','desc')
         // ->paginate(8);
-        $reservas=Reserva::paginate(10);
-    
+        if($query){
+            $reservas=Reserva::where('id_reserva',$query)->orwhere('fecha_reserva',$query)->paginate(5);
+            return view('reserva.index1',['reservas'=>$reservas,'searchText'=>$query]);
+             } 
+        else{
+            $reservas=Reserva::paginate(10);
+        
+                return view('reserva.index1',['reservas'=>$reservas,'searchText'=>$query]);
+         
+         }
 
 
-        return view('reserva.index1',['reservas'=>$reservas,'searchText'=>$query]);
+       
         
         }
     }

@@ -28,11 +28,21 @@ class OrigenDestino_Controller extends Controller
             // //->where ('condicion','=','1')        
             // ->orderBy('id_origen_destino','desc')
             // ->paginate(8);
-            $origenes=Origen_Destino::paginate(5);
-
-            return view('origen_destino.index',['origenes'=>$origenes,'searchText'=>$query]);
+           
+            if($query){
+                $origenes=Origen_Destino::where('id_origen_destino',$query)->orwhere('origen',$query)->paginate(5);
+                return view('origen_destino.index',['origenes'=>$origenes,'searchText'=>$query]);
+                 } 
+            else{
+                $origenes=Origen_Destino::paginate(5);
             
+                return view('origen_destino.index',['origenes'=>$origenes,'searchText'=>$query]);
+             
+             }
             }
+            
+
+            
         }
     
         /**

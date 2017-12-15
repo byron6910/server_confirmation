@@ -8,7 +8,7 @@ class Bus extends Model
 {
     protected $table='bus';
     protected $primaryKey='id_bus';
-    protected $fillable=['capacidad','nombre','condicion','id_cooperativa'];
+    protected $fillable=['capacidad','marca','condicion','id_cooperativa'];
     protected $hidden=['created_at','updated_at'];
     
 

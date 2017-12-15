@@ -3,7 +3,7 @@
 <div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog" tabindex="-1"
  id="modal-delete-<?php echo e($cliente->ci); ?>">
 
-    <?php echo e(Form::Open(['action'=>['ClienteController@destroy',$cliente->ci],'method'=>'delete'])); ?>
+    <?php echo e(Form::Open(['action'=>['Cliente_Controller@destroy',$cliente->ci],'method'=>'delete'])); ?>
 
 
         <div class="modal-dialog">

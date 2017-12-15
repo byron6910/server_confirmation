@@ -3,7 +3,7 @@
 <div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog" tabindex="-1"
  id="modal-delete-<?php echo e($origen->id_origen_destino); ?>">
 
-    <?php echo e(Form::Open(['action'=>['OrigenDestinoController@destroy',$origen->id_origen_destino],'method'=>'delete'])); ?>
+    <?php echo e(Form::Open(['action'=>['OrigenDestino_Controller@destroy',$origen->id_origen_destino],'method'=>'delete'])); ?>
 
 
         <div class="modal-dialog">

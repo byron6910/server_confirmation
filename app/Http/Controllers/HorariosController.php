@@ -34,7 +34,7 @@ class HorariosController extends Controller
         //  ->orderBy('id_horario','desc')
         //  ->paginate(8);
         if($query){
-            $horarios=Horarios::where('fecha_horario',$query)->paginate(5);
+            $horarios=Horarios::where('fecha_horario',$query)->orwhere('id_horario',$query)->paginate(5);
             return view('horario.index',['horarios'=>$horarios,'searchText'=>$query]);
         }else
         $horarios=Horarios::paginate(5);

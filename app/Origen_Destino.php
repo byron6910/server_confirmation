@@ -14,4 +14,8 @@ class Origen_Destino extends Model
     public function horarios(){
         return  $this->hasMany('App\Horarios','id_horario');
     }
+
+    public function viaje(){
+        return $this->hasManyThrough('App\Viaje','App\Horarios','id_origen_destino','id_horario','id_origen_destino','id_horario');
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Input;
 
 class ConductorRequest extends FormRequest
 {
@@ -30,8 +31,10 @@ class ConductorRequest extends FormRequest
             'telefono'=>'max:10|required',
             'direccion'=>'required',
             'correo'=>'required|email|unique:conductor,id_conductor',
-//            'foto'=>'mimes:jpeg,bmp,png',//formato archivos
-            'foto'=>'required',//formato archivos
+           'foto'=>'required',
+             //'foto'=>'image:jpeg,bmp,png',//formato archivos
+         // 'foto'=>Input::file('foto','mimes:jpeg,bmp,png'),//formato archivos
+           // 'foto'=>'mimes:jpeg,bmp,png',//formato archivos
             
             'id_bus'=>'required'
 
