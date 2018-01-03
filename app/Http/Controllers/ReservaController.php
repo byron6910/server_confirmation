@@ -101,7 +101,7 @@ class ReservaController extends Controller
      */
     public function show($id)
     {
-        $reserva=reserva::find($id);
+        $reserva=Reserva::find($id);
         
         $response=['reserva'=>$reserva];
         
@@ -139,7 +139,7 @@ class ReservaController extends Controller
      */
     public function update(ReservaRequest $request, $id)
     {
-        $reserva=reserva::findOrFail($id);
+        $reserva=Reserva::findOrFail($id);
         $reserva->fecha_reserva=$request->get('fecha_reserva');        
         $reserva->estado=$request->get('estado');
         $reserva->cantidad=$request->get('cantidad');

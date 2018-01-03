@@ -44,7 +44,7 @@
                 <label for="id_cooperativa">Cooperativa:</label>
                 <select name="id_cooperativa" class="form-control">
                     @foreach($cooperativas as $cooperativa)
-                        @if($cooperativa->id_cooperativa==$bus->id_origen_destino)
+                        @if($cooperativa->id_cooperativa==$bus->id_cooperativa)
                     <option value="{{$cooperativa->id_cooperativa}} "selected> {{$cooperativa->nombre}}</option>
                         @else
                     <option value="{{$cooperativa->id_cooperativa}} "> {{$cooperativa->nombre}}</option>

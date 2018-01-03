@@ -18,11 +18,11 @@ class Viaje extends Model
     }
 
     public function cooperativa(){
-        return  $this->belongsTo('App\Cooperativa');
+        return  $this->belongsTo('App\Cooperativa','id_cooperativa');
     }
 
     public function horario(){
-        return  $this->belongsTo('App\Horarios');
+        return  $this->belongsTo('App\Horarios','id_horario');
     }
     
          

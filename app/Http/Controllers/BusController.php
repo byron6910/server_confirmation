@@ -67,6 +67,7 @@ class BusController extends Controller
         $bus->id_cooperativa=$request->get('id_cooperativa');
         
         $bus->save();
+        session()->flash('message','Bus Creado Exitosamente');
 
         return Redirect::to('bus');
     }

@@ -16,7 +16,7 @@ class Cooperativa extends Model
         return $this->hasMany('App\Bus','id_bus');
     }
     public function viajes(){
-        return $this->hasMany('App\Viajes','id_viaje');
+        return $this->hasMany('App\Viaje','id_viaje');
     }
 
     
